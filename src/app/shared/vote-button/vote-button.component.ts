@@ -57,7 +57,7 @@ export class VoteButtonComponent implements OnInit {
     this.voteService.vote(this.votePayload).subscribe(() => {
       this.updateVoteDetails();
     }, error => {
-      this.toastr.error("Canot vote by more than one up/down");
+      this.toastr.error("Cannot vote by more than one up/down");
       throwError(error);
     });
   }
