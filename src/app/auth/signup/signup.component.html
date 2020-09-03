@@ -39,9 +39,21 @@
                                 </span>  
                             </div>
                         </div>
- 
+                        <div class="form-group row">
+                            
+                                <div class="col-md-1">
+                                    <re-captcha (resolved)="resolved($event)" siteKey="6Le-R8UZAAAAAGqcuEvJdZoEtp5bpQup7LxNr4Nr">
+                                        
+                                    </re-captcha>
+                                </div>
+         
+                           
+                        </div>
+
+
+                      
                         <span class="col-md-6 offset-md-4">
-                            <button type="submit" class="sign-up">
+                            <button type="submit" class="sign-up" [disabled]="token=='' || !token" >
                                 Sign Up
                             </button>
                             <span style="padding-left: 15px">Existing user? <a routerLink="/login">Log In</a></span>

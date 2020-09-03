@@ -44,6 +44,7 @@ export class ViewPostComponent implements OnInit {
     this.commentService.postComment(this.commentPayload).subscribe(data => {
       this.commentForm.get('text').setValue('');
       this.getCommentsForPost();
+      
     }, error => {
       throwError(error);
     })
@@ -60,9 +61,11 @@ export class ViewPostComponent implements OnInit {
   private getCommentsForPost() {
     this.commentService.getAllCommentsForPost(this.postId).subscribe(data => {
       this.comments = data;
+      console.log(this.comments)
     }, error => {
       throwError(error);
     });
   }
+ 
 
 }
